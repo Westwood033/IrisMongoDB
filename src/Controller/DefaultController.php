@@ -35,10 +35,10 @@ final class DefaultController extends AbstractController
 
                 $projectDir = $this->getParameter('kernel.project_dir');
 
-                $python = $projectDir.'/venv/bin/python3.12';
+                $python = "python3";//$projectDir.'/venv/bin/python3.12';
                 $script = $projectDir.'/python/kaggle.py';
 
-                $command = "$python $script -f $finalPath";
+                $command = "$python $script -f $finalPath 2>&1";
                 $result = shell_exec($command);
             }
         }
@@ -67,7 +67,7 @@ final class DefaultController extends AbstractController
 
             $projectDir = $this->getParameter('kernel.project_dir');
 
-            $python = $projectDir.'/venv/bin/python3.12';
+            $python =  $python = "python3";//$projectDir.'/venv/bin/python3.12';
             $script = $projectDir.'/python/kaggle.py';
 
             $command = "$python $script -n $sepalLengthCm $sepalWidthCm $petalLengthCm $petalWidthCm";
@@ -85,7 +85,7 @@ final class DefaultController extends AbstractController
     {
         $projectDir = $this->getParameter('kernel.project_dir');
 
-        $python = $projectDir.'/venv/bin/python3.12';
+        $python =  $python = "python3";//$projectDir.'/venv/bin/python3.12';
         $script = $projectDir.'/python/kaggle.py';
 
         $result = shell_exec("$python $script -t");
@@ -98,7 +98,7 @@ final class DefaultController extends AbstractController
     {
         $projectDir = $this->getParameter('kernel.project_dir');
 
-        $python = $projectDir.'/venv/bin/python3.12';
+        $python =  $python = "python3";//$projectDir.'/venv/bin/python3.12';
         $script = $projectDir.'/python/kaggle.py';
 
         $result = shell_exec("$python $script -d");

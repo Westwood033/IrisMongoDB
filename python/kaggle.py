@@ -1,3 +1,4 @@
+import os
 from pymongo import MongoClient
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -75,8 +76,7 @@ def new(nb1, nb2, nb3, nb4):
 
     train(collection, False, nouvelle_fleur)
 
-
-client = MongoClient("mongodb://admin:password@localhost:27017/")
+client = MongoClient("mongodb://user:MaudePasse@mongo:27017/ma_base?authSource=ma_base")
 db = client["ma_base"]
 collection = db["Iris"]
 
